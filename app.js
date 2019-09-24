@@ -1,5 +1,6 @@
-///list avengers
 const avengers =[];
+/* ///list avengers
+
 
 /// get user input
 
@@ -23,4 +24,11 @@ function addAvenger(alias, identity, powers, firstAppearance){
     avengers.push(new Avenger(alias, identity, powers, firstAppearance));
 }
 addAvenger('Captain America', 'steve rogers', 'freedom', 1941);
-///display objects on screen
+///display objects on screen */
+
+const form = document.querySelector('#hero-form');// could also getElementById
+const userAlias = document.querySelector('#alias');
+const userPowers = document.querySelector('#powers');
+const userFullName = document.querySelector('#full-name');
+const userFirstAppearance = document.querySelector('#first-appearance');
+const userimage = document.querySelector('#image');
