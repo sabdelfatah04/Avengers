@@ -31,11 +31,12 @@ const userAlias = document.querySelector('#alias');
 const userPowers = document.querySelector('#powers');
 const userFullName = document.querySelector('#full-name');
 const userFirstAppearance = document.querySelector('#first-appearance');
-const userimage = document.querySelector('#image');
+const userImage = document.querySelector('#image');
 const display = document.querySelector('.display');
 
 function eventListeners(){
     form.addEventListener('submit', displayAvengerMember);
+    display.addEventListener('click', removeAvenger);
 /*     form.addEventListener('submit', function(){
         console.log('test');
     }); */
@@ -51,6 +52,14 @@ function displayAvengerMember(e){
     newHtml = newHtml.replace('%years%', userFirstAppearance.value);
     newHtml = newHtml.replace('%URL%', userImage.value);
     display.insertAdjacentHTML('beforeend', newHtml);
-    console.log('why no work');
-    console.log(userAlias.value);
+
+    e.preventDefault();
 }
+
+function removeAvenger(e) {
+    if(e.target.parentElement.classList.contains('remove-avenger')){
+        //e.target.parentElement.parentElement.remove();
+        console.log(e.target.parentElement);
+    }
+}
+
