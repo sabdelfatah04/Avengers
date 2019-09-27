@@ -70,9 +70,6 @@ html{
     color: white;
 }
 .display{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 80vw;
     margin: 1rem auto;
 }
@@ -86,4 +83,9 @@ html{
 }
 .display-image img {
     height: 9rem;
+}
+.utility-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

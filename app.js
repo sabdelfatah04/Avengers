@@ -44,22 +44,26 @@ function eventListeners(){
 eventListeners();
 
 function displayAvengerMember(e){
-    let html = '<div class="display-avenger"><div class="display-alias">%alias%</div><div class="display-powers">%powers%</div><div class="display-name">%name%</div><div class="first-appearance">%years%</div></div><div class="display-image"><img src="%URL%" atl=""></div><div class="remove-avenger"><p class="remove-avenger">Remove Avenger &#10006; </p></div></div></div>';
+    let html = '<div class="display-avenger"><div class="display-alias">%alias%</div><div class="display-powers">%powers%</div><div class="display-name">%name%</div><div class="first-appearance">%years%</div><div class="display-image"><img src="%url%" atl=""></div><div class="remove-avenger"><p class="remove-avenger">Remove Avenger &#10006; </p></div></div>';
 
     let newHtml = html.replace('%alias%', userAlias.value);
     newHtml = newHtml.replace('%powers%', userPowers.value);
     newHtml = newHtml.replace('%name%', userFullName.value);
     newHtml = newHtml.replace('%years%', userFirstAppearance.value);
-    newHtml = newHtml.replace('%URL%', userImage.value);
+    newHtml = newHtml.replace('%url%', userImage.value);
     display.insertAdjacentHTML('beforeend', newHtml);
 
     e.preventDefault();
+
+    if()
 }
 
 function removeAvenger(e) {
     if(e.target.parentElement.classList.contains('remove-avenger')){
-        //e.target.parentElement.parentElement.remove();
-        console.log(e.target.parentElement);
+        e.target.parentElement.parentElement.remove();
+        //console.log(e.target.parentElement);
     }
 }
+
+
 
