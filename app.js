@@ -37,14 +37,17 @@ const display = document.querySelector('.display');
 function eventListeners(){
     form.addEventListener('submit', displayAvengerMember);
     display.addEventListener('click', removeAvenger);
-/*     form.addEventListener('submit', function(){
+    form.addEventListener('submit', function(){
         console.log('test');
-    }); */
+    });
 }
 eventListeners();
 
 function displayAvengerMember(e){
-    let html = '<div class="display-avenger"><div class="display-alias">%alias%</div><div class="display-powers">%powers%</div><div class="display-name">%name%</div><div class="first-appearance">%years%</div><div class="display-image"><img src="%url%" atl=""></div><div class="remove-avenger"><p class="remove-avenger">Remove Avenger &#10006; </p></div></div>';
+    if (userAlias.value||userPowers.value||userFullName.value||userFirstAppearance.value||userImage.value === '') {
+        alert('Error: Missing Info')
+      } else {
+        let html = '<div class="display-avenger"><div class="display-alias">%alias%</div><div class="display-powers">%powers%</div><div class="display-name">%name%</div><div class="first-appearance">%years%</div><div class="display-image"><img src="%url%" atl=""></div><div class="remove-avenger"><p class="remove-avenger">Remove Avenger &#10006; </p></div></div>';
 
     let newHtml = html.replace('%alias%', userAlias.value);
     newHtml = newHtml.replace('%powers%', userPowers.value);
@@ -52,18 +55,26 @@ function displayAvengerMember(e){
     newHtml = newHtml.replace('%years%', userFirstAppearance.value);
     newHtml = newHtml.replace('%url%', userImage.value);
     display.insertAdjacentHTML('beforeend', newHtml);
-
+    init();
     e.preventDefault();
 
-    if()
+      }
+      
 }
 
 function removeAvenger(e) {
     if(e.target.parentElement.classList.contains('remove-avenger')){
         e.target.parentElement.parentElement.remove();
-        //console.log(e.target.parentElement);
+        console.log(e.target.parentElement);
     }
 }
-
+function init(){
+    userAlias.value = '';
+    userPowers.value = '';
+    userFullName.value = '';
+    userFirstAppearance.value = '';
+    userImage.value = '';
+}
+init();
 
 
