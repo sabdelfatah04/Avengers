@@ -1,0 +1,19 @@
+{
+  "name": "avengers",
+  "version": "1.0.0",
+  "description": "idk",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabdelfatah04/Avengers.git"
+  },
+  "author": "abdelfatah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sabdelfatah04/Avengers/issues"
+  },
+  "homepage": "https://github.com/sabdelfatah04/Avengers#readme"
+}
